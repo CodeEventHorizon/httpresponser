@@ -56,12 +56,8 @@ const processing = function (message) {
  * * PUT or POST: The resource describing the result of the action is transmitted in the message body
  * * TRACE: The message body contains the request message as received by the server
  */
-const success = function (data, key) {
-  return this.response(200, '', data, key);
-};
-
-const successMessage = function (data, message, key) {
-  return this.response(200, message, data);
+const success = function (message) {
+  return this.response(200, message);
 };
 
 //! 201 Created
@@ -69,8 +65,8 @@ const successMessage = function (data, message, key) {
  * The request succeeded, and a new resource was created as a result.
  * This is typically the response sent after POST request, or some PUT requests.
  */
-const created = function (key) {
-  return this.response(201, { key: key || 'PENDING' });
+const created = function (message) {
+  return this.response(201, message);
 };
 
 //! 202 accepted
@@ -80,8 +76,8 @@ const created = function (key) {
  * the outcome of the request. It is intended for cases where another process
  * or server handles the request, or for batch processing
  */
-const accepted = function (key) {
-  return this.response(202, { key: key || 'ACCEPTED' });
+const accepted = function (message) {
+  return this.response(202, message);
 };
 
 //! 203 Non-Authoritative Information
@@ -100,8 +96,8 @@ const nonAuthoritativeInfo = function (message) {
  * There is no content to send for this request, but the headers may be useful.
  * The user agent may update this cached headers for this resource with the new ones.
  */
-const noContent = function (key) {
-  return this.response(204, { key: key || 'NO_CONTENT' });
+const noContent = function (message) {
+  return this.response(204, message);
 };
 
 //! 205 Reset Content
@@ -248,8 +244,8 @@ const unauthorized = function () {
  * so the server is refusing to give the requested resource. Unlike 401 Unauthorized,
  * the client's identity is known to the server
  */
-const forbidden = function (message, data) {
-  return this.response(403, message, data);
+const forbidden = function (message) {
+  return this.response(403, message);
 };
 
 //! 404 Not Found
@@ -260,8 +256,8 @@ const forbidden = function (message, data) {
  * 403 Forbidden to hide the existence of a resource from an unauthorized client.
  * This response code is probably the most well known due to its frequent occurrence on the web.
  */
-const notFound = function (key) {
-  return this.response(404, { key: key || 'ERR_NOT_FOUND' });
+const notFound = function (message) {
+  return this.response(404, message);
 };
 
 //! 405 Method Not Allowed
@@ -278,8 +274,8 @@ const methodNotAllowed = function (message) {
  * This response is sent when the web server, after performing server-driven content negotiation,
  * doesn't find any content that conforms to the criteria given by the user agent.
  */
-const notAcceptable = function (key) {
-  return this.response(406, { key: key || 'NOT_ACCEPTABLE' });
+const notAcceptable = function (message) {
+  return this.response(406, message);
 };
 
 //! 407 Proxy Authentication Required
@@ -469,9 +465,8 @@ const unavailableForLegalReasons = function (message) {
 /*
  * The server has encountered a situation it does not know how to handle.
  */
-const error = function (err) {
-  console.log(err);
-  return this.response(500, 'Oops something went wrong');
+const error = function (message) {
+  return this.response(500, message);
 };
 
 //! 501 Not Implemented
@@ -613,7 +608,6 @@ export default {
   switchingProtocols,
   processing,
   success,
-  successMessage,
   created,
   accepted,
   nonAuthoritativeInfo,
