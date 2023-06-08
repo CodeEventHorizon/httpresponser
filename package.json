@@ -1,5 +1,5 @@
 {
-  "name": "statuscodes.js",
+  "name": "httpresponser",
   "version": "0.0.1",
   "description": "HTTP status codes",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeEventHorizon/statuscodes.js.git"
+    "url": "git+https://github.com/CodeEventHorizon/httpresponser.git"
   },
   "keywords": [
     "Node.js"
@@ -16,7 +16,7 @@
   "author": "Nikoloz Muladze",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CodeEventHorizon/statuscodes.js/issues"
+    "url": "https://github.com/CodeEventHorizon/httpresponser/issues"
   },
-  "homepage": "https://github.com/CodeEventHorizon/statuscodes.js#readme"
+  "homepage": "https://github.com/CodeEventHorizon/httpresponser#readme"
 }

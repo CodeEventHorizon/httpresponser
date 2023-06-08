@@ -1,2 +1,2 @@
-# statuscodes.js
+# httpresponser
 HTTP status codes
