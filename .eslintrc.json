@@ -1,0 +1,139 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "standard",
+    "plugin:n/recommended-module",
+    "plugin:security/recommended",
+    "plugin:mocha/recommended",
+    "plugin:promise/recommended",
+    "plugin:import/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  /* https://www.npmjs.com/package/eslint-plugin-n */
+  /* https://www.npmjs.com/package/eslint-plugin-security */
+  /* https://www.npmjs.com/package/eslint-plugin-promise */
+  /* https://www.npmjs.com/package/eslint-plugin-import */
+
+  "plugins": ["n", "mocha", "security", "promise", "import"],
+  "rules": {
+    /* Node */
+    "n/no-deprecated-api": "warn",
+    "n/no-callback-literal": "warn",
+    "n/no-exports-assign": "warn",
+    "n/handle-callback-err": "warn",
+    "n/no-path-concat": "warn",
+    "n/no-process-exit": "off", // for the time being
+    "n/process-exit-as-throw": "warn",
+    "n/no-unpublished-bin": "warn",
+    "n/no-unsupported-features/node-builtins": "warn",
+    "n/callback-return": "warn",
+    "n/no-sync": "warn",
+    "n/prefer-global/buffer": "warn",
+    "n/prefer-global/console": "warn",
+    "n/prefer-global/process": "warn",
+    "n/prefer-global/text-decoder": "warn",
+    "n/prefer-global/text-encoder": "warn",
+    "n/prefer-global/url": "warn",
+    "n/prefer-global/url-search-params": "warn",
+    "n/prefer-promises/dns": "warn",
+    "n/prefer-promises/fs": "warn",
+    "n/no-missing-import": "error",
+    "n/no-extraneous-import": "error",
+    "n/no-missing-require": "error",
+    "n/no-extraneous-require": "error",
+    "n/no-new-require": "error",
+    "n/no-unpublished-import": "error",
+    "n/no-unpublished-require": "error",
+    "n/exports-style": ["error", "exports"],
+
+    /* Promise */
+    "promise/catch-or-return": "error",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/always-return": "error",
+    "promise/no-native": "off",
+    "promise/no-new-statics": "error",
+    "promise/valid-params": "error",
+    "promise/no-return-in-finally": "error",
+    "promise/prefer-await-to-then": "warn",
+    "promise/prefer-await-to-callbacks": "warn",
+    "promise/no-callback-in-promise": "error",
+    "promise/no-nesting": "warn",
+    "promise/no-promise-in-callback": "warn",
+    "promise/avoid-new": "off",
+    "promise/no-multiple-resolved": "error",
+
+    /* Import */
+    // Helpful warnings
+    "import/export": "warn",
+    "import/no-deprecated": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "import/no-mutable-exports": "warn",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "off",
+    "import/no-unused-modules": "warn",
+    // Module systems
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+    "import/no-import-module-exports": "error",
+    "import/unambiguous": "error",
+    "import/default": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/no-absolute-path": [
+      "error",
+      { "commonjs": false, "esmodule": false, "amd": true }
+    ],
+    "import/no-cycle": "error",
+    "import/no-dynamic-require": "error",
+    "import/no-relative-packages": "error",
+    "import/no-restricted-paths": "error",
+    "import/no-self-import": "error",
+    "import/no-unresolved": [
+      "error",
+      { "commonjs": true, "esmodule": true, "amd": true }
+    ],
+    "import/no-webpack-loader-syntax": "error",
+    // Style guide
+    "import/dynamic-import-chunkname": "error",
+    "import/exports-last": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": ["error", { "considerQueryString": true }],
+    "import/no-named-default": "error",
+    "import/no-named-export": "off",
+    "import/no-namespace": "off",
+    "import/no-unassigned-import": "error",
+    "import/order": "error",
+    "import/prefer-default-export": "error",
+
+    /* Security */
+    "security/detect-non-literal-fs-filename": "error",
+    "security/detect-non-literal-regexp": "error",
+    "security/detect-non-literal-require": "error",
+    "security/detect-bidi-characters": "error",
+    "security/detect-buffer-noassert": "error",
+    "security/detect-disable-mustache-escape": "error",
+    "security/detect-eval-with-expression": "error",
+    "security/detect-new-buffer": "error",
+    "security/detect-no-csrf-before-method-override": "error",
+    "security/detect-object-injection": "off",
+    "security/detect-possible-timing-attacks": "error",
+    "security/detect-pseudoRandomBytes": "error",
+    "security/detect-unsafe-regex": "error",
+    "security/detect-child-process": "error",
+
+    /* Other */
+    "semi": 0,
+    "indent": "off",
+    "space-before-function-paren": "off",
+    "array-callback-return": "off"
+  }
+}
